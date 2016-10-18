@@ -1,7 +1,7 @@
 <!DOCTYPE html5>
 <html>
 	<head>
-		<title>Test</title>	
+		<title>Selector Test</title>	
 	</head>
 	<body>
 		<div class="example">
@@ -12,44 +12,10 @@
         	<li class="1">1</li>
         	<li class="2">2</li>
         </ul>
-		
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+		<script type="text/javascript" src="src/selector.js"></script>
 		<script type="text/javascript">
-
-jQuery.fn.extend({
-	getPath: function( path ) {
-					// The first time this function is called, path won't be defined.
-		if ( typeof path == 'undefined' ) path = '';
-					// If this element is <html> we've reached the end of the path.
-		if ( this.is('html') )
-			return 'html' + path;
-					// Add the element name.
-		var cur = this.get(0).nodeName.toLowerCase();
-					// Determine the IDs and path.
-		var id  = this.attr('id'),
-			class1 = this.attr('class');
-					// Add the #id if there is one.
-		if ( typeof id != 'undefined' )
-			cur += ' #' + id;
-					// Add any classes.
-		if ( typeof class1 != 'undefined' )
-			cur += ' .' + class1.split(/[\s\n]+/).join('.');
-					// Recurse up the DOM.
-		return this.parent().getPath( ' > ' + ' ' + cur + ' ' + path);
-
-		}
-	});
-  	$("*").hover(function() {//shows the path of element currently being hovered.
-  		var path = $(this).getPath();
-  		console.log(path);
-  				// console.log("Just hovered on element having above path.. ");
-  	});
-  	$("*").click(function() { //shows the path of element currently being clicked.
-  		var path = $(this).getPath();
-  		console.log(path);
-  				// console.log("Just clicked element having above path.. ");
-  	});
-	
+			findPathOfElements();
 		</script>
 
 	</body>
