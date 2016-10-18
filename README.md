@@ -1,4 +1,4 @@
-# Selector
+# Selector.js
 - A lightweight Javascript library to get the CSS selector of elements.
 - Finds the CSS selector of the element you hover/click on and displays the entire path in the console.
 
