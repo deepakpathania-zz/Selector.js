@@ -31,6 +31,8 @@
 ```
 - Configure the selector.js file to set events to trigger the library and elements on which to trigger it, for example, if you want it to be active for all elements on hover or click,use the following default functions.
 
+- Call the <code>findPathOfElements();</code> function to start theexecution of script.
+
 ```javascript
 $("*").hover(function() {//shows the path of element currently being hovered.
   var path = $(this).getPath();
